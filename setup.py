@@ -15,8 +15,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/prashantgavit/datagenie",
-    packages=find_packages(where="src"),
-    package_dir={"": "src"},
+    packages=find_packages(),
     install_requires=requirements,
     classifiers=[
         "Intended Audience :: Developers",
