@@ -7,14 +7,14 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = [line.strip() for line in fh if line.strip() and not line.startswith("#")]
 
 setup(
-    name="datagenie",
-    version="0.1.0",
+    name="dxel",
+    version="0.1.0b2",
     author="Prashant Gavit",
     author_email="prashant.gavit115@gmail.com",
     description="An AI-powered data analysis agent for intelligent data insights and visualization",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/prashantgavit/datagenie",
+    url="https://github.com/prashantgavit/dxel",
     packages=find_packages(),
     install_requires=requirements,
     classifiers=[

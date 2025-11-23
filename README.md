@@ -1,7 +1,7 @@
 
-# DataGenie: AI-Powered Data Analysis Agent
+# dxel: AI-Powered Data Analysis Agent
 
-DataGenie is an extensible Python package designed to automate and enhance data analysis workflows using Large Language Models (LLMs) and agent-based orchestration. It enables users to interact with their data, generate insights, and visualize results through natural language queries and intelligent agents.
+dxel is an extensible Python package designed to automate and enhance data analysis workflows using Large Language Models (LLMs) and agent-based orchestration. It enables users to interact with their data, generate insights, and visualize results through natural language queries and intelligent agents.
 
 ## Project Overview
 
@@ -20,16 +20,19 @@ DataGenie is an extensible Python package designed to automate and enhance data 
 
 **How It Works:**
 1. Users provide a dataset and a natural language query.
-2. DataGenie agents interpret the query, analyze the data, and return results or visualizations.
+2. dxel agents interpret the query, analyze the data, and return results or visualizations.
 3. LLMs (like Gemini) are used for reasoning, summarization, and generating code or explanations.
 
 The package is modular, allowing you to add new agents, LLM integrations, or utilities as needed.
 
+**Note:**  
+1. The current version only supports the Gemini LLM API.
+
 ## Prerequisites
 - Python 3.11+
-- Install DataGenie in editable mode:
+- Install dxel:
   ```
-  conda activate datagenie && pip install -e .
+  pip install dxel
   ```
 - Set your `GOOGLE_API_KEY` as an environment variable for Gemini LLM access.
 - Place your dataset (e.g., Titanic-Dataset.csv) in `notebook_io/data_agent/input/`
@@ -37,13 +40,13 @@ The package is modular, allowing you to add new agents, LLM integrations, or uti
 
 ## Demo Notebook: Step-by-Step Walkthrough
 
-1. **Import Required Libraries and DataGenie Modules**
+1. **Import Required Libraries and dxel Modules**
    - Import standard Python libraries (os, sys, pandas, numpy, etc.)
-   - Import DataGenie modules:
+  - Import dxel modules:
      ```python
-     from datagenie.utils.llm_agent.agent import Agent
-     from datagenie.utils.llm.gemini import Gemini
-     from datagenie.datascience.agent import DataAnalystAgent
+     from dxel.utils.llm_agent.agent import Agent
+     from dxel.utils.llm.gemini import Gemini
+     from dxel.datascience.agent import DataAnalystAgent
      ```
 
 2. **Set Data Path and API Key**
@@ -94,4 +97,4 @@ The package is modular, allowing you to add new agents, LLM integrations, or uti
 - Distribution queries
 
 ---
-For more details, see the notebook: `demo_notebook/data_analyst_agent.ipynb`
+For more details, see the [demo notebook](https://github.com/prashantgavit/DataGenie/blob/main/demo_notebook/data_analyst_agent.ipynb).

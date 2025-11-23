@@ -1,4 +1,4 @@
-from datagenie.utils.llm.base_llm import BaseLLM as llmClient
+from dxel.utils.llm.base_llm import BaseLLM as llmClient
 
 class Agent:
 

@@ -1,6 +1,6 @@
-from datagenie.datascience.utils import summarize_df
-from datagenie.utils.llm_agent.agent import Agent
-from datagenie.utils.llm.gemini import Gemini
+from dxel.datascience.utils import summarize_df
+from dxel.utils.llm_agent.agent import Agent
+from dxel.utils.llm.gemini import Gemini
 import pandas as pd
 import io
 import base64

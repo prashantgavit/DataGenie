@@ -99,3 +99,5 @@ src_v1/
 
 # Environment variables
 .env
+
+pip_package_steps.md
