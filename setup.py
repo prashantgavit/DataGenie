@@ -8,7 +8,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="dxel",
-    version="0.1.0b2",
+    version="0.1.0b3",
     author="Prashant Gavit",
     author_email="prashant.gavit115@gmail.com",
     description="An AI-powered data analysis agent for intelligent data insights and visualization",

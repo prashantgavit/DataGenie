@@ -15,6 +15,9 @@ from google.genai.errors import APIError
 from .base_llm import BaseLLM
 
 
+
+
+
 class Gemini(BaseLLM):
     """
     LLM class for interacting with Google Gemini language models via the Client API.
@@ -85,7 +88,7 @@ class Gemini(BaseLLM):
         contents = [
                     types.Content(
                         parts=[
-                            types.Part(text=user_prompt)  # <--- CORRECTED HERE
+                            types.Part(text=user_prompt)  
                         ]
                     )
                 ]

@@ -8,8 +8,17 @@ from unittest.mock import Mock, patch, MagicMock
 from google.genai import types
 from google.genai.errors import APIError
 from dotenv import load_dotenv
+import sys
 
-from src.agent.llm.gemini import Gemini
+
+# Project setup
+project_name = 'DataGenie'
+base_pth = os.getcwd().split(project_name)[0] + f'{project_name}/'
+sys.path.append(base_pth)
+
+
+from dxel.utils.llm.gemini import Gemini
+
 
 # Load environment variables from .env file
 load_dotenv()

@@ -25,4 +25,6 @@
 
 - Don't read the .env file directly in code.
 - The following keys are available as environment variables, so whenever you write code to access API keys, use these environment variable names:
-    - GOOGLE_API_KEY 
+    - GOOGLE_API_KEY
+    - OPENAI_API_KEY 
+    - GROQ_API_KEY

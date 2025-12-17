@@ -11,11 +11,14 @@ project_name = 'DataGenie'
 base_pth = os.getcwd().split(project_name)[0] + f'{project_name}/'
 sys.path.append(base_pth)
 
-from src.datagenie.agent import DataAnalystAgent
+
+from dxel.datascience.agent import DataAnalystAgent
+from dxel.utils.llm.gemini import Gemini
 
 # Load environment variables
 load_dotenv()
 api_key = os.getenv('GOOGLE_API_KEY')
+gemini_llm = Gemini(api_key=api_key)
 
 def test_csv_path_init():
     """Test initialization with CSV file path"""
@@ -24,7 +27,7 @@ def test_csv_path_init():
     print("=" * 60)
     
     data_loc = base_pth + 'notebook_io/data_agent/input/Titanic-Dataset.csv'
-    agent = DataAnalystAgent(df_loc=data_loc, api_key=api_key)
+    agent = DataAnalystAgent(gemini_llm, df_loc=data_loc)
     
     print(f"✅ Agent initialized with CSV file")
     print(f"   Dataset shape: {agent.df.shape}")
@@ -44,7 +47,7 @@ def test_dataframe_init():
         'score': [85.5, 92.3, 78.9]
     })
     
-    agent = DataAnalystAgent(df=df, api_key=api_key)
+    agent = DataAnalystAgent(gemini_llm, df=df)
     
     print(f"✅ Agent initialized with DataFrame")
     print(f"   Dataset shape: {agent.df.shape}")
@@ -64,7 +67,7 @@ def test_update_dataframe():
         'price': [10, 20, 30]
     })
     
-    agent = DataAnalystAgent(df=df1, api_key=api_key)
+    agent = DataAnalystAgent(gemini_llm, df=df1)
     print(f"Initial dataset shape: {agent.df.shape}")
     print(f"Initial columns: {list(agent.df.columns)}")
     
@@ -89,7 +92,7 @@ def test_error_handling():
     print("=" * 60)
     
     try:
-        agent = DataAnalystAgent(api_key=api_key)
+        agent = DataAnalystAgent(gemini_llm)
         print("❌ Should have raised ValueError")
     except ValueError as e:
         print(f"✅ Correctly raised ValueError: {e}")

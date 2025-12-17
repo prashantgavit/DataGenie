@@ -1,6 +1,6 @@
-from dxel.datascience.utils import summarize_df
-from dxel.utils.llm_agent.agent import Agent
-from dxel.utils.llm.gemini import Gemini
+from dxel.utils import summarize_df
+from agent.llm_agent.agent import Agent
+from agent.llm.gemini import Gemini
 import pandas as pd
 import io
 import base64
@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 class DataAnalystAgent :
 
-    def __init__(self, llm ,df_loc=None, df=None):
+    def __init__(self, df_loc=None, api_key=None, df=None):
         """
         Initialize DataAnalystAgent with either a CSV file path or a DataFrame.
         
@@ -28,7 +28,7 @@ class DataAnalystAgent :
             raise ValueError("Either df_loc or df must be provided")
         
         self.summary_json = summarize_df(self.df)
-        self.gemini_llm = llm
+        self.gemini_llm = Gemini(api_key)
         self.summary_agent = self._create_summary_agent()
         self.plot_agent = self._create_plot_agent()
         self.router_agent =  self._router_agent()
